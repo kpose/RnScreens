@@ -52,6 +52,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     //margin: 10,
     fontFamily: "Arial",
+    marginBottom: 20,
   },
   leftIcon: {
     marginRight: 10,

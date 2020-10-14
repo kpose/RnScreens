@@ -14,25 +14,32 @@ import CustomDescription from "../components/CustonDescription";
 import CustomButton from "../components/CustomButton";
 import CustomInput from "../components/CustomInput";
 
-export default function Welcome({ navigation }) {
+export default function Signin({ navigation }) {
   return (
     <SafeAreaView>
       <View style={styles.heading}>
-        <CustomHeading title="Welcome back!" />
+        <CustomHeading title="Save With MyKolo" />
       </View>
-      <CustomDescription title="Enter your phone number to log in" />
+      <CustomDescription title="Please sign in to continue app" />
       <View style={styles.input}>
         <CustomInput
-          rightIcon="ios-phone-portrait"
-          placeholder="+234 000 000 000"
-          keyboardType="number-pad"
+          rightIcon="ios-mail"
+          placeholder="Email Address"
+          keyboardType="email-address"
+          style={{ marginTop: 10 }}
         />
+
+        <CustomInput rightIcon="md-lock" placeholder="Password" />
+        {/* <Text style={styles.helpText}> Help?</Text> */}
+
         <CustomButton
-          title="Sign in"
-          onPress={() => navigation.navigate("Signin")}
+          style={styles.button}
+          title="Sign in Account"
+          onPress={() => navigation.navigate("SignupOne")}
         />
       </View>
-      <Text style={styles.helpText}> Help?</Text>
+      <Text style={styles.redText}> Don't have an account?</Text>
+      <Text style={styles.text}> REGISTER</Text>
     </SafeAreaView>
   );
 }
@@ -57,11 +64,20 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginTop: 70,
   },
-  helpText: {
+  button: {
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 40,
+  },
+  redText: {
     color: "red",
     padding: 20,
     marginLeft: 10,
     fontSize: 15,
     fontWeight: "bold",
+  },
+  text: {
+    marginLeft: 30,
+    fontSize: 18,
   },
 });
