@@ -22,9 +22,13 @@ export default function Signin({ navigation }) {
       </View>
       <CustomDescription title="Require information to account creations" />
       <View style={styles.input}>
-        <CustomInput placeholder="First name" style={{ marginTop: 10 }} />
+        <CustomInput
+          placeholder="Email Address"
+          rightIcon="ios-mail"
+          style={{ marginTop: 10 }}
+        />
 
-        <CustomInput placeholder="Last name" />
+        <CustomInput placeholder="Alternate Email" rightIcon="ios-mail" />
         {/* <Text style={styles.helpText}> Help?</Text> */}
 
         <View
@@ -42,7 +46,7 @@ export default function Signin({ navigation }) {
         <CustomButton
           style={styles.button}
           title="Continue"
-          onPress={() => navigation.navigate("SignupTwo")}
+          onPress={() => navigation.navigate("SetPassword")}
         />
       </View>
       <Text style={styles.text}> Already have an Account?</Text>

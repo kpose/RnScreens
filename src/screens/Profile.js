@@ -4,45 +4,45 @@ import {
   View,
   Text,
   SafeAreaView,
+  Image,
   Dimensions,
   TouchableHighlight,
   Button,
 } from "react-native";
+import LottieView from "lottie-react-native";
 
-import CustomHeading from "../components/CustomHeading";
-import CustomDescription from "../components/CustonDescription";
 import CustomButton from "../components/CustomButton";
-import CustomInput from "../components/CustomInput";
+import CustomDescription from "../components/CustonDescription";
 
-export default function Signin({ navigation }) {
+export default function Profile({ navigation }) {
   return (
     <SafeAreaView>
-      <View style={styles.heading}>
-        <CustomHeading title="Sign up" />
-      </View>
-      <CustomDescription title="Require information to account creations" />
-      <View style={styles.input}>
-        <CustomInput placeholder="First name" style={{ marginTop: 10 }} />
-
-        <CustomInput placeholder="Last name" />
-        {/* <Text style={styles.helpText}> Help?</Text> */}
-
+      <View style={styles.profile}>
         <View
           style={{
-            width: 10,
-            height: 10,
+            width: 100,
+            height: 100,
             borderRadius: "50%",
-            backgroundColor: "#f00",
             justifyContent: "center",
             alignItems: "center",
           }}
-          underlayColor="#ccc"
-        ></View>
+        >
+          <Image
+            style={{ flex: 1, width: 100, height: 100, borderRadius: 50 }}
+            source={require("../../assets/kpose.jpg")}
+          />
+        </View>
+        <CustomDescription
+          style={{ flex: 1, flexWrap: "wrap" }}
+          title="Upload Profile Picture"
+        />
+      </View>
 
+      <View style={styles.buttonContainer}>
         <CustomButton
           style={styles.button}
-          title="Continue"
-          onPress={() => navigation.navigate("SignupTwo")}
+          title="Sign up Account"
+          onPress={() => navigation.navigate("BasicInformation")}
         />
       </View>
       <Text style={styles.text}> Already have an Account?</Text>
@@ -66,15 +66,22 @@ const styles = StyleSheet.create({
   heading: {
     marginTop: 100,
   },
-  input: {
-    justifyContent: "center",
+  profile: {
+    flexDirection: "row",
     alignItems: "center",
-    marginTop: 70,
+    padding: 30,
+    marginTop: 150,
+    //marginBottom: 100,
   },
   button: {
     justifyContent: "center",
     alignItems: "center",
-    marginTop: 40,
+    //marginTop: 40,
+  },
+  buttonContainer: {
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 70,
   },
   redText: {
     color: "red",
@@ -87,5 +94,10 @@ const styles = StyleSheet.create({
     marginLeft: 30,
     fontSize: 18,
     paddingTop: 20,
+  },
+  lottie: {
+    height: 200,
+    width: 200,
+    marginTop: 30,
   },
 });

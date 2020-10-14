@@ -8,41 +8,28 @@ import {
   TouchableHighlight,
   Button,
 } from "react-native";
+import LottieView from "lottie-react-native";
 
-import CustomHeading from "../components/CustomHeading";
-import CustomDescription from "../components/CustonDescription";
 import CustomButton from "../components/CustomButton";
-import CustomInput from "../components/CustomInput";
 
-export default function Signin({ navigation }) {
+const animation = require("../../assets/mykolo.json");
+
+export default function Age({ navigation }) {
   return (
     <SafeAreaView>
-      <View style={styles.heading}>
-        <CustomHeading title="Sign up" />
-      </View>
-      <CustomDescription title="Require information to account creations" />
       <View style={styles.input}>
-        <CustomInput placeholder="First name" style={{ marginTop: 10 }} />
-
-        <CustomInput placeholder="Last name" />
-        {/* <Text style={styles.helpText}> Help?</Text> */}
-
-        <View
-          style={{
-            width: 10,
-            height: 10,
-            borderRadius: "50%",
-            backgroundColor: "#f00",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-          underlayColor="#ccc"
-        ></View>
-
+        <LottieView
+          source={animation}
+          autoPlay
+          style={styles.lottie}
+          resizeMode="cover"
+        />
+      </View>
+      <View style={styles.buttonContainer}>
         <CustomButton
           style={styles.button}
-          title="Continue"
-          onPress={() => navigation.navigate("SignupTwo")}
+          title="Age"
+          onPress={() => navigation.navigate("Profile")}
         />
       </View>
       <Text style={styles.text}> Already have an Account?</Text>
@@ -69,12 +56,18 @@ const styles = StyleSheet.create({
   input: {
     justifyContent: "center",
     alignItems: "center",
-    marginTop: 70,
+    marginBottom: 70,
+    //marginTop: 70,
   },
   button: {
     justifyContent: "center",
     alignItems: "center",
-    marginTop: 40,
+    //marginTop: 40,
+  },
+  buttonContainer: {
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 70,
   },
   redText: {
     color: "red",
@@ -87,5 +80,10 @@ const styles = StyleSheet.create({
     marginLeft: 30,
     fontSize: 18,
     paddingTop: 20,
+  },
+  lottie: {
+    height: 200,
+    width: 200,
+    marginTop: 30,
   },
 });

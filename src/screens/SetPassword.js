@@ -14,17 +14,21 @@ import CustomDescription from "../components/CustonDescription";
 import CustomButton from "../components/CustomButton";
 import CustomInput from "../components/CustomInput";
 
-export default function Signin({ navigation }) {
+export default function SetPassword({ navigation }) {
   return (
     <SafeAreaView>
       <View style={styles.heading}>
-        <CustomHeading title="Sign up" />
+        <CustomHeading title="Set Password" />
       </View>
       <CustomDescription title="Require information to account creations" />
       <View style={styles.input}>
-        <CustomInput placeholder="First name" style={{ marginTop: 10 }} />
+        <CustomInput
+          placeholder="Password"
+          rightIcon="ios-eye-off"
+          style={{ marginTop: 10 }}
+        />
 
-        <CustomInput placeholder="Last name" />
+        <CustomInput placeholder="Repeat Password" rightIcon="ios-eye-off" />
         {/* <Text style={styles.helpText}> Help?</Text> */}
 
         <View
@@ -42,7 +46,7 @@ export default function Signin({ navigation }) {
         <CustomButton
           style={styles.button}
           title="Continue"
-          onPress={() => navigation.navigate("SignupTwo")}
+          onPress={() => navigation.navigate("Age")}
         />
       </View>
       <Text style={styles.text}> Already have an Account?</Text>
