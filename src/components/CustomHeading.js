@@ -15,11 +15,11 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
    marginBottom: 15,
-    marginLeft: 20
+    marginLeft: 20,
     
   },
   headingText: {
-    fontSize: 30,
+    fontSize: 40,
     color: "#000",
     fontWeight: "bold",
     textAlign: 'left',
