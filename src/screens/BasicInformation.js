@@ -40,6 +40,7 @@ export default function BasicInformation({ navigation }) {
                 style={{
                   textAlign: "center",
                   fontWeight: "bold",
+                  marginRight: 20,
                 }}
               >
                 Male
@@ -54,6 +55,7 @@ export default function BasicInformation({ navigation }) {
                 style={{
                   textAlign: "center",
                   fontWeight: "bold",
+                  marginRight: 20,
                 }}
               >
                 Female
@@ -67,7 +69,7 @@ export default function BasicInformation({ navigation }) {
           <CustomInput placeholder="Input Address" />
           <CustomButton
             title="Continue"
-            onPress={() => navigation.navigate("Signin")}
+            onPress={() => navigation.navigate("EmergencyContact")}
           />
         </View>
       </SafeAreaView>
@@ -88,7 +90,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
   heading: {
-    marginTop: 70,
+    marginTop: 100,
   },
   input: {
     justifyContent: "center",
@@ -103,9 +105,11 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
   gender: {
-    flex: 1,
+    //flex: 1,
     flexDirection: "row",
     marginBottom: 15,
+    justifyContent: "space-around",
+    //alignItems: "center",
   },
   genderIcon: {
     width: 100,
@@ -116,7 +120,7 @@ const styles = StyleSheet.create({
   },
 
   genderContainer: {
-    backgroundColor: "#68b6bd",
+    backgroundColor: "#2a49b8",
     borderRadius: 10,
     paddingVertical: 10,
     paddingHorizontal: 12,
