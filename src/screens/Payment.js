@@ -151,7 +151,7 @@ export default function SetPassword({ navigation }) {
             ],
           }}
           width={Dimensions.get("window").width}
-          height={220}
+          height={250}
           yAxisLabel="₦"
           yAxisSuffix="k"
           yAxisInterval={1}
